@@ -1,0 +1,9 @@
+---
+- name: jenkins integrate
+  uri:
+    url: http://{{ jenkins_host }}/job/{{ jenkins_job }}/build?token={{ jenkins_token }}
+    method: GET
+    user: "{{ jenkins_user }}"
+    password: "{{ jenkins_password }}"
+    force_basic_auth: yes
+    status_code: 201
